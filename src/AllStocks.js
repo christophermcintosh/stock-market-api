@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 
 class AllStocks extends Component {
   constructor() {
@@ -31,19 +32,19 @@ class AllStocks extends Component {
 
   render() {
     const { stocks, loading } = this.state;
-    if (loading) return <h1>Loading...</h1>;
+    if (loading) return <Loading />;
     return (
       <div id="all-stocks">
         {stocks.length &&
           stocks.map((stock, i) => {
             return (
               <div key={i} className="text-center inner-div">
-                <div className="wrapper">
+                <div className="wrapper animated fadeIn">
                   <Link to={stock.quote.symbol.toLowerCase()}>
                     <h1>{stock.quote.symbol}</h1>
                   </Link>
                   <h3>{stock.quote.companyName}</h3>
-                  <p>{stock.quote.primaryExchange}</p>
+                  <p>({stock.quote.primaryExchange})</p>
                   <div className="all-stocks-flex">
                     <div>
                       <img src={stock.logo.url} alt={stock.quote.companyName} />

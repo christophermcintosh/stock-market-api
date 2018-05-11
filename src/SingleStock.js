@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import Chart from './Chart';
+import Loading from './Loading';
 
 class SingleStock extends Component {
   constructor(props) {
@@ -66,16 +67,16 @@ class SingleStock extends Component {
   render() {
     const { stock, weeklyChart, loading } = this.state;
 
-    if (loading) return <h1>Loading...</h1>;
+    if (loading) return <Loading />;
 
     return (
-      <div id="single-stock">
+      <div id="single-stock" className="animated fadeIn">
         <div className="text-center wrapper">
           <Link to={stock.quote.symbol.toLowerCase()}>
             <h1>{stock.quote.symbol}</h1>
           </Link>
           <h3>{stock.quote.companyName}</h3>
-          <p>{stock.quote.primaryExchange}</p>
+          <p>({stock.quote.primaryExchange})</p>
           <div className="single-stock-flex">
             <div>
               <img src={stock.logo.url} alt={stock.quote.companyName} />

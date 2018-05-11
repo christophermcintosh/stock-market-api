@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import AllStocks from './AllStocks';
 import SingleStock from './SingleStock';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route path="/:symbol" component={SingleStock} />
           />
         </Switch>
+        <Footer />
       </div>
     );
   }

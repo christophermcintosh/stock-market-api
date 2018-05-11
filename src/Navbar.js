@@ -47,7 +47,9 @@ class Navbar extends Component {
             </div>
           </div>
           <div className="text-center">
-            <p>Stock Market Api</p>
+            <Link to="/">
+              <p>Stock Market Api</p>
+            </Link>
           </div>
           <div className="time">
             <p>{this.state.date.toLocaleTimeString()}</p>
