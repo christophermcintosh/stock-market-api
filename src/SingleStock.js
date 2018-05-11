@@ -19,11 +19,13 @@ class SingleStock extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.getStock();
   }
 
   getStock = () => {
     const { symbol } = this.props.match.params;
+
     const url = `https://api.iextrading.com/1.0/stock/market/batch?symbols=${symbol}&types=quote,news,chart,logo&range=1m&last=5`;
 
     fetch(url)
@@ -91,7 +93,7 @@ class SingleStock extends Component {
                     : 'red text-bold'
                 }
               >
-                {stock.quote.change} ( {stock.quote.changePercent})%
+                {stock.quote.change} ({stock.quote.changePercent})%
               </p>
             </div>
           </div>

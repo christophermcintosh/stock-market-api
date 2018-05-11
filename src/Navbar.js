@@ -47,7 +47,7 @@ class Navbar extends Component {
             </div>
           </div>
           <div className="text-center">
-            <Link to="/">
+            <Link to="/stock-market-api">
               <p>Stock Market Api</p>
             </Link>
           </div>
@@ -57,7 +57,7 @@ class Navbar extends Component {
         </nav>
         {menuOpen ? (
           <div onClick={this.handleMenu} className="nav-links">
-            <Link to="/">
+            <Link to="/stock-market-api">
               <p>All Products</p>
             </Link>
           </div>

@@ -12,8 +12,8 @@ class App extends Component {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={AllStocks} />
-          <Route path="/:symbol" component={SingleStock} />
+          <Route path="/stock-market-api/:symbol" component={SingleStock} />
+          <Route path="/stock-market-api" component={AllStocks} />
           />
         </Switch>
         <Footer />

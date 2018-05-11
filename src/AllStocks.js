@@ -31,8 +31,8 @@ class AllStocks extends Component {
   };
 
   render() {
-    const { stocks, loading } = this.state;
-    if (loading) return <Loading />;
+    const { stocks } = this.state;
+    if (!stocks.length) return <Loading />;
     return (
       <div id="all-stocks">
         {stocks.length &&
@@ -40,7 +40,9 @@ class AllStocks extends Component {
             return (
               <div key={i} className="text-center inner-div">
                 <div className="wrapper animated fadeIn">
-                  <Link to={stock.quote.symbol.toLowerCase()}>
+                  <Link
+                    to={`/stock-market-api/${stock.quote.symbol.toLowerCase()}`}
+                  >
                     <h1>{stock.quote.symbol}</h1>
                   </Link>
                   <h3>{stock.quote.companyName}</h3>
