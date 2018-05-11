@@ -58,7 +58,7 @@ class Navbar extends Component {
         {menuOpen ? (
           <div onClick={this.handleMenu} className="nav-links">
             <Link to="/stock-market-api">
-              <p>All Products</p>
+              <p>All Stocks</p>
             </Link>
           </div>
         ) : null}

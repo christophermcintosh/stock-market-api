@@ -101,7 +101,7 @@ class SingleStock extends Component {
         </div>
         <hr />
         <div>
-          <h1 className="text-center">Five Day Report</h1>
+          <h1 className="text-center">5 Day Report</h1>
           <Chart data={this.state.dataset} />
           {weeklyChart.reverse().map((chart, i) => {
             return (
